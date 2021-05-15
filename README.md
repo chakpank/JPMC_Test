@@ -1,3 +1,15 @@
+# Salient Features of Solution
+
+1. Used Request and Response specification Builder to optiomize code.
+2. ENUM and Properties file to store the constants and global variables
+3. User POJO Classes to achive Serialization and Deserialization for Test Data Building
+4. Use Random Number Generators from Math class to generate random User ID, Post ID
+5. Performed Data Driven Testing using Scenario Outlines
+6. Created test case grouping using tags
+7. Created generic scenarios to reduce the code duplicity
+8. Used Maven for dependency management and test execution
+9. Used Github as Code Repository
+
 # Execution Process: 
 
 **Way 1**: 
