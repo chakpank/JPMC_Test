@@ -1,0 +1,1360 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-05-15T19:50:04.136Z",
+        "line": 5,
+        "name": "Verify if Post is successfully created using Post Creation API",
+        "description": "",
+        "id": "validating-social-media-api;verify-if-post-is-successfully-created-using-post-creation-api",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2160000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Create Post Payload",
+            "match": {
+              "location": "stepDefinitions.StepDefinitions.create_post_payload()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3246000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User calls \"CreatePostAPI\" with \"POST\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"CreatePostAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"POST\"",
+                  "offset": 32
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.user_calls_with_post_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "the API call is successful with status code 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 44
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.the_api_call_is_successful_with_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1225000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Post \"id\" is 101",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"id\"",
+                  "offset": 5
+                },
+                {
+                  "val": "101",
+                  "offset": 13
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.post(java.lang.String,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Post \"Server\" is \"cloudflare\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Server\"",
+                  "offset": 5
+                },
+                {
+                  "val": "\"cloudflare\"",
+                  "offset": 17
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.postServer(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Post"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-05-15T19:50:10.920Z",
+        "line": 13,
+        "name": "Verify if Post is not created successfully using Post Creation API with incorrect resource",
+        "description": "",
+        "id": "validating-social-media-api;verify-if-post-is-not-created-successfully-using-post-creation-api-with-incorrect-resource",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "Create Post Payload",
+            "match": {
+              "location": "stepDefinitions.StepDefinitions.create_post_payload()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 822000000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "User calls \"CreatePostAPI\" with \"POST\" http request and invalid resource",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"CreatePostAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"POST\"",
+                  "offset": 32
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.user_calls_with_post_http_request_with_invalid_resource(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "the API call is unsuccessful with status code 404",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 46
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.the_api_call_is_unsuccessful_with_status_code(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Post"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-05-15T19:50:11.759Z",
+        "line": 30,
+        "name": "Verify if Post is successfully created using Post Creation API with multiple set of data",
+        "description": "",
+        "id": "validating-social-media-api;verify-if-post-is-successfully-created-using-post-creation-api-with-multiple-set-of-data;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 8000000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "Create Post Payload with 31 310 \"Title for Post 310\" \"Body for Post 310\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "31",
+                  "offset": 25
+                },
+                {
+                  "val": "310",
+                  "offset": 28
+                },
+                {
+                  "val": "\"Title for Post 310\"",
+                  "offset": 32
+                },
+                {
+                  "val": "\"Body for Post 310\"",
+                  "offset": 53
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.create_post_payload_with(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 581000000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "User calls \"CreatePostAPI\" with \"POST\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"CreatePostAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"POST\"",
+                  "offset": 32
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.user_calls_with_post_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "the API call is successful with status code 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 44
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.the_api_call_is_successful_with_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 20000000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "Post \"id\" is 101",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"id\"",
+                  "offset": 5
+                },
+                {
+                  "val": "101",
+                  "offset": 13
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.post(java.lang.String,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "Post \"Server\" is \"cloudflare\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Server\"",
+                  "offset": 5
+                },
+                {
+                  "val": "\"cloudflare\"",
+                  "offset": 17
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.postServer(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 16000000,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "Verify content of Post matches with \"Body for Post 310\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Body for Post 310\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.verify_content_of_post_matches_with(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Post"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-05-15T19:50:12.388Z",
+        "line": 31,
+        "name": "Verify if Post is successfully created using Post Creation API with multiple set of data",
+        "description": "",
+        "id": "validating-social-media-api;verify-if-post-is-successfully-created-using-post-creation-api-with-multiple-set-of-data;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "Create Post Payload with 41 410 \"Title for Post 410\" \"Body for Post 410\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "41",
+                  "offset": 25
+                },
+                {
+                  "val": "410",
+                  "offset": 28
+                },
+                {
+                  "val": "\"Title for Post 410\"",
+                  "offset": 32
+                },
+                {
+                  "val": "\"Body for Post 410\"",
+                  "offset": 53
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.create_post_payload_with(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 585000000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "User calls \"CreatePostAPI\" with \"POST\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"CreatePostAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"POST\"",
+                  "offset": 32
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.user_calls_with_post_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "the API call is successful with status code 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 44
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.the_api_call_is_successful_with_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 18000000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "Post \"id\" is 101",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"id\"",
+                  "offset": 5
+                },
+                {
+                  "val": "101",
+                  "offset": 13
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.post(java.lang.String,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "Post \"Server\" is \"cloudflare\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Server\"",
+                  "offset": 5
+                },
+                {
+                  "val": "\"cloudflare\"",
+                  "offset": 17
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.postServer(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 18000000,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "Verify content of Post matches with \"Body for Post 410\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Body for Post 410\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.verify_content_of_post_matches_with(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Post"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-05-15T19:50:13.019Z",
+        "line": 32,
+        "name": "Verify if Post is successfully created using Post Creation API with multiple set of data",
+        "description": "",
+        "id": "validating-social-media-api;verify-if-post-is-successfully-created-using-post-creation-api-with-multiple-set-of-data;;4",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "Create Post Payload with 51 510 \"Title for Post 510\" \"Body for Post 510\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "51",
+                  "offset": 25
+                },
+                {
+                  "val": "510",
+                  "offset": 28
+                },
+                {
+                  "val": "\"Title for Post 510\"",
+                  "offset": 32
+                },
+                {
+                  "val": "\"Body for Post 510\"",
+                  "offset": 53
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.create_post_payload_with(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 598000000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "User calls \"CreatePostAPI\" with \"POST\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"CreatePostAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"POST\"",
+                  "offset": 32
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.user_calls_with_post_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "the API call is successful with status code 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 44
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.the_api_call_is_successful_with_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 31000000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "Post \"id\" is 101",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"id\"",
+                  "offset": 5
+                },
+                {
+                  "val": "101",
+                  "offset": 13
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.post(java.lang.String,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "Post \"Server\" is \"cloudflare\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Server\"",
+                  "offset": 5
+                },
+                {
+                  "val": "\"cloudflare\"",
+                  "offset": 17
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.postServer(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 18000000,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "Verify content of Post matches with \"Body for Post 510\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Body for Post 510\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.verify_content_of_post_matches_with(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Post"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-05-15T19:50:13.677Z",
+        "line": 36,
+        "name": "Verify if users are getting listed successfully using the GetUsersAPI",
+        "description": "",
+        "id": "validating-social-media-api;verify-if-users-are-getting-listed-successfully-using-the-getusersapi",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "Setup is ready to list users",
+            "match": {
+              "location": "stepDefinitions.StepDefinitions.setup_is_ready_to_list_users()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 172000000,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "User calls \"GetUsersAPI\" with \"GET\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"GetUsersAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"GET\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.user_calls_with_post_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "the API call is successful with status code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 44
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.the_api_call_is_successful_with_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "Post \"Server\" is \"cloudflare\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Server\"",
+                  "offset": 5
+                },
+                {
+                  "val": "\"cloudflare\"",
+                  "offset": 17
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.postServer(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ListUser"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-05-15T19:50:13.858Z",
+        "line": 43,
+        "name": "Verify if users are not getting listed successfully using the GetUsersAPI with incorrect resource",
+        "description": "",
+        "id": "validating-social-media-api;verify-if-users-are-not-getting-listed-successfully-using-the-getusersapi-with-incorrect-resource",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "Setup is ready to list users",
+            "match": {
+              "location": "stepDefinitions.StepDefinitions.setup_is_ready_to_list_users()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 580000000,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "User calls \"GetUsersAPI\" with \"GET\" http request and invalid resource",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"GetUsersAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"GET\"",
+                  "offset": 30
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.user_calls_with_post_http_request_with_invalid_resource(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "the API call is unsuccessful with status code 404",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 46
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.the_api_call_is_unsuccessful_with_status_code(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ListUser"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-05-15T19:50:14.445Z",
+        "line": 50,
+        "name": "Verify if Comment is successfully created using Comment Creation API",
+        "description": "",
+        "id": "validating-social-media-api;verify-if-comment-is-successfully-created-using-comment-creation-api",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11000000,
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "Create Comment Payload is ready",
+            "match": {
+              "location": "stepDefinitions.StepDefinitions.create_comment_payload_is_ready()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 821000000,
+              "status": "passed"
+            },
+            "line": 52,
+            "name": "User calls \"CreateCommentAPI\" with \"POST\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"CreateCommentAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"POST\"",
+                  "offset": 35
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.user_calls_with_post_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 53,
+            "name": "the API call is successful with status code 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 44
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.the_api_call_is_successful_with_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 22000000,
+              "status": "passed"
+            },
+            "line": 54,
+            "name": "Post \"id\" is 501",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"id\"",
+                  "offset": 5
+                },
+                {
+                  "val": "501",
+                  "offset": 13
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.post(java.lang.String,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 55,
+            "name": "Post \"Server\" is \"cloudflare\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Server\"",
+                  "offset": 5
+                },
+                {
+                  "val": "\"cloudflare\"",
+                  "offset": 17
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.postServer(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Comment"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-05-15T19:50:15.302Z",
+        "line": 68,
+        "name": "Verify if Comment is successfully created using Comment Creation API with multiple set of data",
+        "description": "",
+        "id": "validating-social-media-api;verify-if-comment-is-successfully-created-using-comment-creation-api-with-multiple-set-of-data;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "line": 60,
+            "name": "Create Comment Payload with 31 310 \"User@310\" \"user310@test.email.com\" \"\u003cBody\u003e\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "31",
+                  "offset": 28
+                },
+                {
+                  "val": "310",
+                  "offset": 31
+                },
+                {
+                  "val": "\"User@310\"",
+                  "offset": 35
+                },
+                {
+                  "val": "\"user310@test.email.com\"",
+                  "offset": 46
+                },
+                {
+                  "val": "\"\u003cBody\u003e\"",
+                  "offset": 71
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.create_comment_payload_with(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 613000000,
+              "status": "passed"
+            },
+            "line": 61,
+            "name": "User calls \"CreateCommentAPI\" with \"POST\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"CreateCommentAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"POST\"",
+                  "offset": 35
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.user_calls_with_post_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 62,
+            "name": "the API call is successful with status code 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 44
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.the_api_call_is_successful_with_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 31000000,
+              "status": "passed"
+            },
+            "line": 63,
+            "name": "Post \"id\" is 501",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"id\"",
+                  "offset": 5
+                },
+                {
+                  "val": "501",
+                  "offset": 13
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.post(java.lang.String,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 64,
+            "name": "Post \"Server\" is \"cloudflare\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Server\"",
+                  "offset": 5
+                },
+                {
+                  "val": "\"cloudflare\"",
+                  "offset": 17
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.postServer(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Comment"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-05-15T19:50:15.956Z",
+        "line": 69,
+        "name": "Verify if Comment is successfully created using Comment Creation API with multiple set of data",
+        "description": "",
+        "id": "validating-social-media-api;verify-if-comment-is-successfully-created-using-comment-creation-api-with-multiple-set-of-data;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "line": 60,
+            "name": "Create Comment Payload with 41 410 \"User@410\" \"user410@test.email.com\" \"\u003cBody\u003e\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "41",
+                  "offset": 28
+                },
+                {
+                  "val": "410",
+                  "offset": 31
+                },
+                {
+                  "val": "\"User@410\"",
+                  "offset": 35
+                },
+                {
+                  "val": "\"user410@test.email.com\"",
+                  "offset": 46
+                },
+                {
+                  "val": "\"\u003cBody\u003e\"",
+                  "offset": 71
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.create_comment_payload_with(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 568000000,
+              "status": "passed"
+            },
+            "line": 61,
+            "name": "User calls \"CreateCommentAPI\" with \"POST\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"CreateCommentAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"POST\"",
+                  "offset": 35
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.user_calls_with_post_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 62,
+            "name": "the API call is successful with status code 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 44
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.the_api_call_is_successful_with_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 14000000,
+              "status": "passed"
+            },
+            "line": 63,
+            "name": "Post \"id\" is 501",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"id\"",
+                  "offset": 5
+                },
+                {
+                  "val": "501",
+                  "offset": 13
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.post(java.lang.String,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 64,
+            "name": "Post \"Server\" is \"cloudflare\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Server\"",
+                  "offset": 5
+                },
+                {
+                  "val": "\"cloudflare\"",
+                  "offset": 17
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.postServer(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Comment"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-05-15T19:50:16.543Z",
+        "line": 70,
+        "name": "Verify if Comment is successfully created using Comment Creation API with multiple set of data",
+        "description": "",
+        "id": "validating-social-media-api;verify-if-comment-is-successfully-created-using-comment-creation-api-with-multiple-set-of-data;;4",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "line": 60,
+            "name": "Create Comment Payload with 51 510 \"User@510\" \"user510@test.email.com\" \"\u003cBody\u003e\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "51",
+                  "offset": 28
+                },
+                {
+                  "val": "510",
+                  "offset": 31
+                },
+                {
+                  "val": "\"User@510\"",
+                  "offset": 35
+                },
+                {
+                  "val": "\"user510@test.email.com\"",
+                  "offset": 46
+                },
+                {
+                  "val": "\"\u003cBody\u003e\"",
+                  "offset": 71
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.create_comment_payload_with(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 553000000,
+              "status": "passed"
+            },
+            "line": 61,
+            "name": "User calls \"CreateCommentAPI\" with \"POST\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"CreateCommentAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"POST\"",
+                  "offset": 35
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.user_calls_with_post_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 62,
+            "name": "the API call is successful with status code 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 44
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.the_api_call_is_successful_with_status_code(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 25000000,
+              "status": "passed"
+            },
+            "line": 63,
+            "name": "Post \"id\" is 501",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"id\"",
+                  "offset": 5
+                },
+                {
+                  "val": "501",
+                  "offset": 13
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.post(java.lang.String,int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 64,
+            "name": "Post \"Server\" is \"cloudflare\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Server\"",
+                  "offset": 5
+                },
+                {
+                  "val": "\"cloudflare\"",
+                  "offset": 17
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.postServer(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Comment"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-05-15T19:50:17.128Z",
+        "line": 73,
+        "name": "Verify if Comment is not created successfully using Comment Creation API with incorrect resource",
+        "description": "",
+        "id": "validating-social-media-api;verify-if-comment-is-not-created-successfully-using-comment-creation-api-with-incorrect-resource",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "line": 74,
+            "name": "Create Comment Payload is ready",
+            "match": {
+              "location": "stepDefinitions.StepDefinitions.create_comment_payload_is_ready()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 549000000,
+              "status": "passed"
+            },
+            "line": 75,
+            "name": "User calls \"CreateCommentAPI\" with \"POST\" http request and invalid resource",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"CreateCommentAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"POST\"",
+                  "offset": 35
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.user_calls_with_post_http_request_with_invalid_resource(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 76,
+            "name": "the API call is unsuccessful with status code 404",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 46
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.the_api_call_is_unsuccessful_with_status_code(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Comment"
+          }
+        ]
+      }
+    ],
+    "name": "Validating Social Media API",
+    "description": "",
+    "id": "validating-social-media-api",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/features/SocialMediaAPI.feature",
+    "tags": []
+  }
+]
