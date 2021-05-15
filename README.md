@@ -10,7 +10,7 @@
 8. Used Maven for dependency management and test execution
 9. Used Github as Code Repository
 
-# Execution Process: 
+# Execution Process 
 
 **Way 1**: 
 Using Maven Commands also the execution can be done. Open command prompt and go the directory checked out code directory
@@ -25,8 +25,13 @@ Execute the SocialMediaTest class as JUnit Test to execute all the test cases
 From the SocialMediaTest if we ould like to execute on those test cases with tag = @Post then use that tag as cumcumber.options
 
 
-# Report Generation: 
+# Report Generation 
 
 To generate the execution report use the maven command : mvn test verify
 
 The report would be generated at : target/cucumber-html-reports/overview-features.html
+
+# Sample Report
+
+![image](https://user-images.githubusercontent.com/46698950/118377595-cf03b200-b5eb-11eb-88fb-8f442d48280a.png)
+
